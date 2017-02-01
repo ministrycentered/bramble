@@ -12,7 +12,8 @@ Gem::Specification.new do |s|
   s.files = Dir["{lib}/**/*", "README.md"]
   s.require_path = "lib"
 
-  s.add_runtime_dependency "activejob", "~> 4.2"
+  s.add_runtime_dependency "activejob"
+
   s.add_development_dependency "minitest"
   s.add_development_dependency "minitest-focus"
   s.add_development_dependency "minitest-reporters"
