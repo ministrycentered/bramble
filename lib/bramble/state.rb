@@ -29,6 +29,8 @@ module Bramble
     # Clear the state of `handle`
     def clear_job(handle)
       handle_name, job_id = handle.split(SEPARATOR)
+      job_id ||= storage.get(job_id_key(handle_name))
+      handle = [handle_name, SEPARATOR, job_id].join
       storage.delete(job_id_key(handle_name))
       storage.delete(status_key(handle))
       clear_reduce(handle)
